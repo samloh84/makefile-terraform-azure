@@ -1,3 +1,3 @@
-output "main_vpc_id" {
-  value = aws_vpc.main.id
+output "main_vnet_name" {
+  value = azurerm_virtual_network.main.name
 }

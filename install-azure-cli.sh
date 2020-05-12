@@ -7,6 +7,9 @@ if [ ${EUID} != 0 ]; then
     exit $?
 fi
 
+dnf install -y epel-release
+dnf install -y jq
+
 rpm --import https://packages.microsoft.com/keys/microsoft.asc
 
 cat <<-EOF | tee /etc/yum.repos.d/azure-cli.repo
@@ -19,4 +22,3 @@ gpgkey=https://packages.microsoft.com/keys/microsoft.asc"
 EOF
 
 dnf install -y azure-cli
-
